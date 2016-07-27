@@ -4,6 +4,6 @@
  use_frameworks!
 
 target 'SimpleWeatherInfo-RealmTest' do
- pod 'RealmSwift'
+ pod 'RealmSwift', '~> 1.0.2’
 end
 
