@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		479750E2262FEBB7E660D738 /* Pods_SimpleWeatherInfo_RealmTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6965E1E982334B268266442 /* Pods_SimpleWeatherInfo_RealmTest.framework */; };
 		E7C250681D48EC34007632A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C250671D48EC34007632A5 /* AppDelegate.swift */; };
 		E7C2506A1D48EC34007632A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C250691D48EC34007632A5 /* ViewController.swift */; };
 		E7C250801D48F8A4007632A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C2507F1D48F8A4007632A5 /* Assets.xcassets */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6965E1E982334B268266442 /* Pods_SimpleWeatherInfo_RealmTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleWeatherInfo_RealmTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E0A7A3D21D0C22A9E07A3A /* Pods-SimpleWeatherInfo-RealmTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeatherInfo-RealmTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeatherInfo-RealmTest/Pods-SimpleWeatherInfo-RealmTest.release.xcconfig"; sourceTree = "<group>"; };
 		E7C250641D48EC34007632A5 /* SimpleWeatherInfo-RealmTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleWeatherInfo-RealmTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C250671D48EC34007632A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7C250691D48EC34007632A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		E7C2507F1D48F8A4007632A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7C250891D48F8F0007632A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7C2508B1D48F8F0007632A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F85EF114D9631B861E2988DD /* Pods-SimpleWeatherInfo-RealmTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeatherInfo-RealmTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeatherInfo-RealmTest/Pods-SimpleWeatherInfo-RealmTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				479750E2262FEBB7E660D738 /* Pods_SimpleWeatherInfo_RealmTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		039E4FBD7F996466E4D94D03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6965E1E982334B268266442 /* Pods_SimpleWeatherInfo_RealmTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2726DA16F1B4FE9DD1C0F058 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F85EF114D9631B861E2988DD /* Pods-SimpleWeatherInfo-RealmTest.debug.xcconfig */,
+				D8E0A7A3D21D0C22A9E07A3A /* Pods-SimpleWeatherInfo-RealmTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E7C2505B1D48EC34007632A5 = {
 			isa = PBXGroup;
 			children = (
 				E7C250661D48EC34007632A5 /* SimpleWeatherInfo-RealmTest */,
 				E7C250651D48EC34007632A5 /* Products */,
+				2726DA16F1B4FE9DD1C0F058 /* Pods */,
+				039E4FBD7F996466E4D94D03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,9 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7C250761D48EC34007632A5 /* Build configuration list for PBXNativeTarget "SimpleWeatherInfo-RealmTest" */;
 			buildPhases = (
+				26495E37FD1D08B82FA6C5AD /* Check Pods Manifest.lock */,
 				E7C250601D48EC34007632A5 /* Sources */,
 				E7C250611D48EC34007632A5 /* Frameworks */,
 				E7C250621D48EC34007632A5 /* Resources */,
+				BD1BEADE959C7BBF87B7381B /* Embed Pods Frameworks */,
+				1B9BA7CBBAF591E8DCAA3915 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,6 +164,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B9BA7CBBAF591E8DCAA3915 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleWeatherInfo-RealmTest/Pods-SimpleWeatherInfo-RealmTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		26495E37FD1D08B82FA6C5AD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BD1BEADE959C7BBF87B7381B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleWeatherInfo-RealmTest/Pods-SimpleWeatherInfo-RealmTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E7C250601D48EC34007632A5 /* Sources */ = {
@@ -257,6 +332,7 @@
 		};
 		E7C250771D48EC34007632A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F85EF114D9631B861E2988DD /* Pods-SimpleWeatherInfo-RealmTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/SimpleWeatherInfo-RealmTest/Source/Info.plist";
@@ -268,6 +344,7 @@
 		};
 		E7C250781D48EC34007632A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8E0A7A3D21D0C22A9E07A3A /* Pods-SimpleWeatherInfo-RealmTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/SimpleWeatherInfo-RealmTest/Source/Info.plist";
