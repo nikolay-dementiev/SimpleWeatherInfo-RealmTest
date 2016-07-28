@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		479750E2262FEBB7E660D738 /* Pods_SimpleWeatherInfo_RealmTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6965E1E982334B268266442 /* Pods_SimpleWeatherInfo_RealmTest.framework */; };
+		E794228F1D4A411700982887 /* WeatherCurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794228E1D4A411700982887 /* WeatherCurrent.swift */; };
+		E79422911D4A46CA00982887 /* WeatherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79422901D4A46CA00982887 /* WeatherCity.swift */; };
+		E79422941D4A4CA000982887 /* Optional+Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79422931D4A4CA000982887 /* Optional+Browser.swift */; };
+		E79422971D4A55C200982887 /* GeneralVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79422961D4A55C200982887 /* GeneralVariables.swift */; };
+		E794229A1D4A5B1D00982887 /* OpenweathermapOrgApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79422991D4A5B1D00982887 /* OpenweathermapOrgApi.swift */; };
 		E7C250681D48EC34007632A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C250671D48EC34007632A5 /* AppDelegate.swift */; };
 		E7C2506A1D48EC34007632A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C250691D48EC34007632A5 /* ViewController.swift */; };
 		E7C250801D48F8A4007632A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C2507F1D48F8A4007632A5 /* Assets.xcassets */; };
@@ -18,6 +23,11 @@
 /* Begin PBXFileReference section */
 		C6965E1E982334B268266442 /* Pods_SimpleWeatherInfo_RealmTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleWeatherInfo_RealmTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E0A7A3D21D0C22A9E07A3A /* Pods-SimpleWeatherInfo-RealmTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeatherInfo-RealmTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeatherInfo-RealmTest/Pods-SimpleWeatherInfo-RealmTest.release.xcconfig"; sourceTree = "<group>"; };
+		E794228E1D4A411700982887 /* WeatherCurrent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCurrent.swift; sourceTree = "<group>"; };
+		E79422901D4A46CA00982887 /* WeatherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCity.swift; sourceTree = "<group>"; };
+		E79422931D4A4CA000982887 /* Optional+Browser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Browser.swift"; sourceTree = "<group>"; };
+		E79422961D4A55C200982887 /* GeneralVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralVariables.swift; sourceTree = "<group>"; };
+		E79422991D4A5B1D00982887 /* OpenweathermapOrgApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenweathermapOrgApi.swift; sourceTree = "<group>"; };
 		E7C250641D48EC34007632A5 /* SimpleWeatherInfo-RealmTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleWeatherInfo-RealmTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C250671D48EC34007632A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7C250691D48EC34007632A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +67,53 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E794228B1D4A3FA200982887 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E794228C1D4A3FA200982887 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E79422901D4A46CA00982887 /* WeatherCity.swift */,
+				E794228E1D4A411700982887 /* WeatherCurrent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E794228D1D4A3FA200982887 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E79422921D4A4CA000982887 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E79422931D4A4CA000982887 /* Optional+Browser.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		E79422951D4A557F00982887 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E79422961D4A55C200982887 /* GeneralVariables.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E79422981D4A5AFA00982887 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E79422991D4A5B1D00982887 /* OpenweathermapOrgApi.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		E7C2505B1D48EC34007632A5 = {
 			isa = PBXGroup;
 			children = (
@@ -78,9 +135,15 @@
 		E7C250661D48EC34007632A5 /* SimpleWeatherInfo-RealmTest */ = {
 			isa = PBXGroup;
 			children = (
+				E79422981D4A5AFA00982887 /* API */,
+				E79422951D4A557F00982887 /* Helpers */,
+				E794228C1D4A3FA200982887 /* Model */,
+				E794228B1D4A3FA200982887 /* Controller */,
+				E794228D1D4A3FA200982887 /* View */,
 				E7C250671D48EC34007632A5 /* AppDelegate.swift */,
 				E7C250691D48EC34007632A5 /* ViewController.swift */,
 				E7C2507B1D48F6E0007632A5 /* Source */,
+				E79422921D4A4CA000982887 /* Util */,
 			);
 			path = "SimpleWeatherInfo-RealmTest";
 			sourceTree = "<group>";
@@ -218,8 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79422971D4A55C200982887 /* GeneralVariables.swift in Sources */,
+				E794229A1D4A5B1D00982887 /* OpenweathermapOrgApi.swift in Sources */,
 				E7C2506A1D48EC34007632A5 /* ViewController.swift in Sources */,
+				E79422911D4A46CA00982887 /* WeatherCity.swift in Sources */,
 				E7C250681D48EC34007632A5 /* AppDelegate.swift in Sources */,
+				E794228F1D4A411700982887 /* WeatherCurrent.swift in Sources */,
+				E79422941D4A4CA000982887 /* Optional+Browser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
