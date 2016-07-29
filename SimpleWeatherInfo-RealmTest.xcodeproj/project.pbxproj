@@ -74,8 +74,8 @@
 		E794228B1D4A3FA200982887 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E794229D1D4B628900982887 /* WeatherTableViewController.swift */,
 				E794229F1D4B62B500982887 /* WeatherMainViewController.swift */,
+				E794229D1D4B628900982887 /* WeatherTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

@@ -14,21 +14,6 @@ let OpenweathermapOrgAPI = OpenweathermapOrg()
 private let SwiftyJSONTransformer =
 	ResponseContentTransformer { JSON($0.content as AnyObject) }
 
-//class SiestaWeathermapAPI: Service {
-//	init() {
-//		super.init(baseURL: "http://api.openweathermap.org")
-//	}
-//
-//	var profile:			Resource { return resource("/profile") }
-//	var currentItem:  Resource { return resource("/items") }
-//
-//	func item(id: String) -> Resource {
-//		return items.child(id)
-//	}
-//}
-
-//let myAPI = MyAPI()
-
 //see: http://bustoutsolutions.github.io/siesta/guide/services-resources/
 
 class OpenweathermapOrg {

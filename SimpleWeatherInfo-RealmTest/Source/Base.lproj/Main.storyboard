@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sez-hB-VIH">
-                                <rect key="frame" x="0.0" y="104" width="600" height="496"/>
+                                <rect key="frame" x="0.0" y="107" width="600" height="493"/>
                                 <connections>
                                     <segue destination="byS-Qh-s5R" kind="embed" id="FZM-q1-jFH"/>
                                 </connections>
                             </containerView>
                             <searchBar contentMode="redraw" placeholder="Enter city name" translatesAutoresizingMaskIntoConstraints="NO" id="9QG-1n-ewo">
-                                <rect key="frame" x="0.0" y="60" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="63" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="j2f-6g-qX7"/>
                                 </constraints>
@@ -37,16 +37,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9QG-1n-ewo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="Lmj-jG-1Dh"/>
+                            <constraint firstItem="9QG-1n-ewo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="63" id="Lmj-jG-1Dh"/>
                             <constraint firstAttribute="trailing" secondItem="sez-hB-VIH" secondAttribute="trailing" id="N7g-4V-EqA"/>
                             <constraint firstItem="9QG-1n-ewo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Phz-YO-zeO"/>
                             <constraint firstItem="sez-hB-VIH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WIn-hV-OB2"/>
-                            <constraint firstItem="sez-hB-VIH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="eh6-4h-Kso"/>
+                            <constraint firstItem="sez-hB-VIH" firstAttribute="top" secondItem="9QG-1n-ewo" secondAttribute="bottom" id="X3l-RN-zWX"/>
                             <constraint firstAttribute="trailing" secondItem="9QG-1n-ewo" secondAttribute="trailing" id="uG0-7A-xMx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sez-hB-VIH" secondAttribute="bottom" id="zxs-vg-G73"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Weather in city" id="Xyt-J0-pvs"/>
+                    <connections>
+                        <outlet property="citySearch" destination="9QG-1n-ewo" id="AGo-YZ-ciT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +78,7 @@
             <objects>
                 <tableViewController id="byS-Qh-s5R" customClass="WeatherTableViewController" customModule="SimpleWeatherInfo_RealmTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TNU-ZG-YzY">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="496"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="493"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

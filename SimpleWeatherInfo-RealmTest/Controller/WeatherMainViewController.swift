@@ -11,7 +11,9 @@ import Siesta
 
 class WeatherMainViewController: UIViewController, UISearchBarDelegate, ResourceObserver {
 
-var repoListVC: WeatherTableViewController?
+	@IBOutlet weak var citySearch: UISearchBar!
+
+	var repoListVC: WeatherTableViewController?
 	var statusOverlay = ResourceStatusOverlay()
 
 	var weatherResource: Resource? {
@@ -35,23 +37,26 @@ var repoListVC: WeatherTableViewController?
 	}
 
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-			statusOverlay.embedIn(self)
-			showActiveRepos()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+		citySearch.delegate = self
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+		statusOverlay.embedIn(self)
+		showActiveRepos()
+
+		// Do any additional setup after loading the view.
+	}
+
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
 
 	func showActiveRepos() {
-//		usernameLabel.text = "Active Repositories"
-//		fullNameLabel.text = nil
-//		avatar.imageURL = nil
+		//		usernameLabel.text = "Active Repositories"
+		//		fullNameLabel.text = nil
+		//		avatar.imageURL = nil
 		repoListVC?.repositoriesResource = OpenweathermapOrgAPI.currentWeatherRepositories
 	}
 
@@ -68,14 +73,14 @@ var repoListVC: WeatherTableViewController?
 		}
 	}
 
-    /*
-    // MARK: - Navigation
+	/*
+	// MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	// In a storyboard-based application, you will often want to do a little preparation before navigation
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	// Get the new view controller using segue.destinationViewController.
+	// Pass the selected object to the new view controller.
+	}
+	*/
 
 }
