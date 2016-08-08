@@ -30,14 +30,15 @@ class OpenweathermapOrg {
 		}
 	}
 
-	var currentWeatherRepositories: Resource {
-		return service
-			.resource("/data/2.5")
-			//.withParam("?q", "Kiev")
-			.withParam("mode", "json")
-			.withParam("units", "metri")
-			.withParam("appid", sharedParameters.keyForOpenweathermap)
-	}
+//	var currentWeatherRepositories: Resource {
+//		return service
+//			.resource("/data/2.5")
+//			//.withParam("?q", "Kiev")
+//			.withParam("mode", "json")
+//			.withParam("units", "metri")
+//			.withParam("appid", sharedParameters.keyForOpenweathermap)
+//	}
+
 
 	//http://bulk.openweathermap.org/sample/city.list.json.gz
 	var bulkWeatherRepositories: Resource {
@@ -49,8 +50,11 @@ class OpenweathermapOrg {
 
 	func getCity(cityName: String) -> Resource {
 		return service
-			.resource("/weather")
-			.withParam("?q", cityName)//child(cityName)
+			.resource("/data/2.5/weather")
+			.withParam("q", cityName)
+			.withParam("mode", "json")
+			.withParam("units", "metric")
+			.withParam("appid", sharedParameters.keyForOpenweathermap)
 	}
 
 	func wiperResource () {

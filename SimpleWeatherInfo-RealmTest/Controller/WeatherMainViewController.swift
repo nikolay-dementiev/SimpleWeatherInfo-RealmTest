@@ -57,7 +57,7 @@ class WeatherMainViewController: UIViewController, UISearchBarDelegate, Resource
 		//		usernameLabel.text = "Active Repositories"
 		//		fullNameLabel.text = nil
 		//		avatar.imageURL = nil
-		repoListVC?.repositoriesResource = OpenweathermapOrgAPI.currentWeatherRepositories
+//		repoListVC?.repositoriesResource = OpenweathermapOrgAPI.currentWeatherRepositories
 	}
 
 	func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -66,7 +66,7 @@ class WeatherMainViewController: UIViewController, UISearchBarDelegate, Resource
 			// Setting userResource triggers a load and display of the new user data. Note that Siesta’s redunant
 			// request elimination and model caching make it reasonable to do this on every keystroke.
 
-			weatherResource = OpenweathermapOrgAPI.getCity(searchText)
+			weatherResource = OpenweathermapOrgAPI.getCity("Kiev")
 		} else {
 			weatherResource = nil
 			showActiveRepos()
