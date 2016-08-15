@@ -28,6 +28,26 @@ class OpenweathermapOrg {
 
 			$0.config.pipeline[.parsing].add(SwiftyJSONTransformer, contentTypes: ["*/json"])
 		}
+
+
+		// Mapping from specific paths to models
+
+		service.configureTransformer("/sample/*") {
+			try WeatherCity(jsonBulk: $0.content)  // Input type inferred because User.init takes JSON
+		}
+
+//		service.configureTransformer("weather/?q*") {
+//			try ($0.content as JSON)   // “as JSON” gives Siesta the expected input type
+//				.arrayValue            // SwiftyJSON defaults to []
+//				.map(WeatherCurrent.init)  // Model mapping gives Siesta an implicit output type
+//		}
+
+				service.configureTransformer("/data/2.5/weather/*") {
+					try WeatherCurrent.init(json: $0.content)   // “as JSON” gives Siesta the expected input type
+
+				}
+
+
 	}
 
 //	var currentWeatherRepositories: Resource {

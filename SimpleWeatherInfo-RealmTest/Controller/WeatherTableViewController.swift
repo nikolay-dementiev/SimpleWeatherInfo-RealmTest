@@ -26,7 +26,7 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 
 	var repositories: [WeatherCurrent] = [] {
 		didSet {
-			//tableView.reloadData()
+			tableView.reloadData()
 		}
 	}
 
@@ -44,13 +44,37 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+
+		statusOverlay.embedIn(self)
 	}
 
+	override func viewDidLayoutSubviews() {
+		statusOverlay.positionToCoverParent()
+	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
+
+	//MARK: Table DataSource/ Delegate
+
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return  repositories.count ?? 0
+	}
+
+	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+		return 1
+	}
+
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+		if let cell = cell as? RepositoryTableViewCell {
+			cell.repository = repositories[indexPath.row]
+		}
+		return cell
+	}
+
 
 
 }

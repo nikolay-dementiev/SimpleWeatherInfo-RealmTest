@@ -33,7 +33,7 @@ class WeatherMainViewController: UIViewController, UISearchBarDelegate, Resource
 	}
 
 	func resourceChanged(resource: Resource, event: ResourceEvent) {
-
+		showCurrentWeather(weatherResource?.typedContent())
 	}
 
 
@@ -53,11 +53,35 @@ class WeatherMainViewController: UIViewController, UISearchBarDelegate, Resource
 		// Dispose of any resources that can be recreated.
 	}
 
+	func showCurrentWeather(cWeather: WeatherCurrent?) {
+		guard cWeather != nil else {
+			showActiveRepos()
+			return
+		}
+
+		// It's often easiest to make the same code path handle both the “data” and “no data” states.
+		// If this UI update were more expensive, we could choose to do it only on ObserverAdded or NewData.
+
+//		usernameLabel.text = user?.login
+//		fullNameLabel.text = user?.name
+//		avatar.imageURL = user?.avatarURL
+
+		// Setting the repositoriesResource property of the embedded VC triggers load & display of the user’s repos.
+
+		repoListVC?.repositoriesResource =
+		weatherResource
+
+		//			weatherResource?
+//				.optionalRelative(cWeather?.repositoriesURL)?
+//				.withParam("sort", "updated")
+	}
+
+
 	func showActiveRepos() {
 		//		usernameLabel.text = "Active Repositories"
 		//		fullNameLabel.text = nil
 		//		avatar.imageURL = nil
-//		repoListVC?.repositoriesResource = OpenweathermapOrgAPI.currentWeatherRepositories
+		//repoListVC?.repositoriesResource = OpenweathermapOrgAPI.currentWeatherRepositories
 	}
 
 	func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
