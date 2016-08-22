@@ -36,7 +36,13 @@ struct WeatherCurrent {
 		//		description      = json["description"].string
 		//		collaboratorsURL = json["collaboratorsURL"].string
 
-		city            = try WeatherCity(jsonCurrent: json["id"])
+		//let dict = json.dictionaryValue
+
+//		for (key,subJson):(String, JSON) in json {
+//   //Do something you want
+//		}
+
+		city            = try WeatherCity(jsonCurrent: json)
 
 		weatherMain			= json["weather"]["main"].stringValue
 		weatherDescription = json["weather"]["description"].stringValue

@@ -32,8 +32,16 @@ class WeatherMainViewController: UIViewController, UISearchBarDelegate, Resource
 		}
 	}
 
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+
+		//weatherResource?.loadIfNeeded()
+	}
+
 	func resourceChanged(resource: Resource, event: ResourceEvent) {
 		showCurrentWeather(weatherResource?.typedContent())
+
+//		print( weatherResource!.jsonDict["id"])
 	}
 
 
