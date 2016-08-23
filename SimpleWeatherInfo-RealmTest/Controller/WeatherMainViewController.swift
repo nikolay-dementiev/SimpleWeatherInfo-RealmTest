@@ -14,7 +14,7 @@ class WeatherMainViewController: UIViewController, UISearchBarDelegate, Resource
 	@IBOutlet weak var citySearch: UISearchBar!
 
 	var repoListVC: WeatherTableViewController?
-	var statusOverlay = ResourceStatusOverlay()
+//	var statusOverlay = ResourceStatusOverlay()
 
 	var weatherResource: Resource? {
 		didSet {
@@ -27,7 +27,7 @@ class WeatherMainViewController: UIViewController, UISearchBarDelegate, Resource
 			// Adding ourselves as an observer triggers an immediate call to resourceChanged().
 
 			weatherResource?.addObserver(self)
-				.addObserver(statusOverlay, owner: self)
+//				.addObserver(statusOverlay, owner: self)
 				.loadIfNeeded()
 		}
 	}
@@ -50,7 +50,7 @@ class WeatherMainViewController: UIViewController, UISearchBarDelegate, Resource
 
 		citySearch.delegate = self
 
-		statusOverlay.embedIn(self)
+		//statusOverlay.embedIn(self)
 		showActiveRepos()
 
 		// Do any additional setup after loading the view.
@@ -59,6 +59,12 @@ class WeatherMainViewController: UIViewController, UISearchBarDelegate, Resource
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
+	}
+
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "repos" {
+			repoListVC = segue.destinationViewController as? WeatherTableViewController
+		}
 	}
 
 	func showCurrentWeather(cWeather: WeatherCurrent?) {
@@ -76,12 +82,12 @@ class WeatherMainViewController: UIViewController, UISearchBarDelegate, Resource
 
 		// Setting the repositoriesResource property of the embedded VC triggers load & display of the user’s repos.
 
-		repoListVC?.repositoriesResource =
-		weatherResource
+		repoListVC?.repositoriesResource = weatherResource
+	//	weatherResource?
 
 		//			weatherResource?
 //				.optionalRelative(cWeather?.repositoriesURL)?
-//				.withParam("sort", "updated")
+	//			.withParam("sort", "updated")
 	}
 
 

@@ -40,7 +40,7 @@ class OpenweathermapOrg {
 
 
 		service.configureTransformer("/*/*/weather") {
-			try WeatherCurrent(json: $0.content)   // “as JSON” gives Siesta the expected input type
+			try WeatherCurrent(json: $0.content)
 		}
 
 	}

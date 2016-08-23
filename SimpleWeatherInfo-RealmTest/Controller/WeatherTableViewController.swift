@@ -24,7 +24,7 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 		}
 	}
 
-	var repositories: [WeatherCurrent] = [] {
+	var repositories: WeatherCurrent? {//[WeatherCurrent] = [] {
 		didSet {
 			tableView.reloadData()
 		}
@@ -36,7 +36,7 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 		// Siesta’s typedContent() infers from the type of the repositories property that
 		// repositoriesResource should hold content of type [Repository].
 
-		repositories = repositoriesResource?.typedContent() ?? []
+		repositories = repositoriesResource?.typedContent() //?? []
 	}
 
 
@@ -60,7 +60,7 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 	//MARK: Table DataSource/ Delegate
 
 	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return  repositories.count ?? 0
+		return  3//repositories.count ?? 0
 	}
 
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -70,7 +70,7 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 		if let cell = cell as? RepositoryTableViewCell {
-			cell.repository = repositories[indexPath.row]
+			//cell.repository = repositories[indexPath.row]
 		}
 		return cell
 	}

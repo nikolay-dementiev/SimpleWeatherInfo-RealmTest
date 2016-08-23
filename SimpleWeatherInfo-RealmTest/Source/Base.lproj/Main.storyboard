@@ -20,7 +20,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sez-hB-VIH">
                                 <rect key="frame" x="0.0" y="107" width="600" height="493"/>
                                 <connections>
-                                    <segue destination="byS-Qh-s5R" kind="embed" id="FZM-q1-jFH"/>
+                                    <segue destination="byS-Qh-s5R" kind="embed" identifier="repos" id="FZM-q1-jFH"/>
                                 </connections>
                             </containerView>
                             <searchBar contentMode="redraw" placeholder="Enter city name" translatesAutoresizingMaskIntoConstraints="NO" id="9QG-1n-ewo">
