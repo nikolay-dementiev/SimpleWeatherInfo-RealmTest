@@ -36,11 +36,17 @@ struct WeatherCity {
 	}
 
 	private mutating func initOtherFirelds (json: JSON) {
+//		do {
+//			name						= try json["name"].string.required("city.name")
+//			country					= try json["sys"]["country"].string.required("sys.country")
+//		} catch {
+//			print ("error to parse JSON 'city.name' or 'sys.country'")
+//		}
 		name						= json["name"].stringValue
 		country					= json["sys"]["country"].stringValue
 		coordLon				= json["coord"]["lon"].doubleValue
 		coordLat				= json["coord"]["lat"].doubleValue
-		
+
 	}
-	
+
 }

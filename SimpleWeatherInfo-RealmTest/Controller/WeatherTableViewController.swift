@@ -24,9 +24,14 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 		}
 	}
 
-	var repositories: WeatherCurrent? {//[WeatherCurrent] = [] {
+	var representData: RepresentDataObj? {
 		didSet {
-			tableView.reloadData()
+
+			if representData!.notEmpty() {
+				tableView.reloadData()
+			} else {
+				// need blank screeen with empty data warnings!
+			}
 		}
 	}
 
@@ -36,7 +41,18 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 		// Siesta’s typedContent() infers from the type of the repositories property that
 		// repositoriesResource should hold content of type [Repository].
 
-		repositories = repositoriesResource?.typedContent() //?? []
+		//let repositories:WeatherCurrent? = repositoriesResource?.typedContent()
+
+
+//		if repositories != nil {
+//			dictOfRepresentData = repositories!.getRepresentOfObject()
+//		} else {
+//
+//			dictOfRepresentData = [:]
+//		}
+
+		representData = RepresentDataObj(cWeather: repositoriesResource?.typedContent())
+
 	}
 
 
@@ -60,7 +76,7 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 	//MARK: Table DataSource/ Delegate
 
 	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return  3//repositories.count ?? 0
+		return  representData?.countOfElements ?? 0 //dictOfRepresentData.count ?? 0
 	}
 
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -70,11 +86,62 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 		if let cell = cell as? RepositoryTableViewCell {
-			//cell.repository = repositories[indexPath.row]
+
+			let dataFromDict = representData![indexPath.row]
+
+			let cellTransfer = CellDataTemp(title: dataFromDict.key, detail: dataFromDict.value)
+
+			cell.cellDataTransfer = cellTransfer
 		}
 		return cell
 	}
 
+}
 
+struct RepresentDataObj {
+	var dictOfRepresentData: [String: String] = [:] {
+		didSet {
+			arrayOfKeyDict = [String](dictOfRepresentData.keys)
+		}
+	}
+	var countOfElements: Int { get {return dictOfRepresentData.count} }
+	var arrayOfKeyDict:[String] = []
 
+	init (cWeather: WeatherCurrent?) {
+		guard cWeather != nil else {
+			dictOfRepresentData = [:]
+			return
+		}
+
+		dictOfRepresentData = cWeather!.getRepresentOfObject()
+		arrayOfKeyDict = [String](dictOfRepresentData.keys)
+	}
+
+	func notEmpty() -> Bool {
+		return countOfElements > 0
+	}
+
+	struct ValueFromDict {
+		var key: String = ""
+		var value: String = ""
+	}
+
+	subscript(indx: Int) -> ValueFromDict {
+
+		// 1
+		get {
+			var valueToReturn = ValueFromDict()
+
+			if indx >= 0 && indx <= arrayOfKeyDict.count-1 {
+				let keyByIndex = arrayOfKeyDict[indx]
+				let valueFromD = self.dictOfRepresentData[keyByIndex]!
+
+				valueToReturn.key = keyByIndex
+				valueToReturn.value = valueFromD
+			}
+
+			return valueToReturn
+		}
+
+	}
 }
