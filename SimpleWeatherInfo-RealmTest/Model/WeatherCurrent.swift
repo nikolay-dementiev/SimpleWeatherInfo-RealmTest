@@ -61,6 +61,7 @@ struct WeatherCurrent {
 
 	}
 
+
 	func getRepresentOfObject() -> [String: String] {
 
 		var dictOfRepresent = [String: String]()
