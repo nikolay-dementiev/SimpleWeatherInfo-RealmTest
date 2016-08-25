@@ -17,8 +17,11 @@ class WeatherCurrentMod: Object, Mappable {
 	class func createObject (json: JSON) -> WeatherCurrentMod? {
 		var valueToReturn: WeatherCurrentMod?
 		//convert the JSON to a raw String // from SwiftyJSON
+		//valueToReturn = Mapper<WeatherCurrentMod>().map(json.dictionaryObject)
+
 		if let jsonString = json.rawString() {
-			valueToReturn = Mapper<WeatherCurrentMod>().map(jsonString)
+			let context = self.Context(inputJsonString: jsonString)
+			valueToReturn = Mapper<WeatherCurrentMod>(context: context).map(jsonString)
 		}
 		return valueToReturn
 	}
@@ -31,7 +34,7 @@ class WeatherCurrentMod: Object, Mappable {
 	dynamic var weatherMain: String = ""
 //	let weatherDescription: String
 //	let weatherIcon: String?
-//	let base: String
+	dynamic var base: String = ""
 //	let mainTemp: Double
 //	let mainPressure: Int
 //	let mainHumidity: Int
@@ -49,6 +52,9 @@ class WeatherCurrentMod: Object, Mappable {
 //	let sysSunrise: Int
 //	let sysSunset: Int
 
+	struct Context: MapContext {
+		var inputJsonString: String?
+	}
 
 	required convenience init?(_ map: Map) {
 		self.init()
@@ -56,8 +62,12 @@ class WeatherCurrentMod: Object, Mappable {
 	}
 
 	func mapping(map: Map) {
-		city					<- map ["city"]
+		if let context = map.context as? Context {
+			city = WeatherCityMod.createObject(context.inputJsonString)//map["city"]
+		}
+
 		weatherMain   <- map["weather.0.main"]
+		base					<- map["base"]
 	}
 	//static func objectForMapping(map: Map) -> Mappable? // Optional
 

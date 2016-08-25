@@ -20,14 +20,26 @@ class WeatherCityMod: Object, Mappable {
 
 
 	//MARK: Create Realm Obj. from JSON
-	class func createObject (json: JSON) -> WeatherCityMod? {
+	class func createObject<T> (json: T) -> WeatherCityMod? {
 		var valueToReturn: WeatherCityMod?
 		//convert the JSON to a raw String // from SwiftyJSON
-		if let jsonString = json.rawString() {
-			valueToReturn = Mapper<WeatherCityMod>().map(jsonString)
+
+		var jsonString: String?
+
+		if json is JSON {
+				jsonString = (json as! JSON).rawString()
+		} else if json is String {
+			jsonString = json as? String
+		} else {
+			jsonString = ""
 		}
+
+		//if let jsonString = json.rawString() {
+			valueToReturn = Mapper<WeatherCityMod>().map(jsonString)
+		//}
 		return valueToReturn
 	}
+
 
 	//MARK: Internal function of class
 
