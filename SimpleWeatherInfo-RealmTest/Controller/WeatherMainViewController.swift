@@ -67,7 +67,7 @@ class WeatherMainViewController: UIViewController, UISearchBarDelegate, Resource
 		}
 	}
 
-	func showCurrentWeather(cWeather: WeatherCurrent?) {
+	func showCurrentWeather(cWeather: WeatherCurrentMod?) {
 		guard cWeather != nil else {
 			showActiveRepos()
 			return

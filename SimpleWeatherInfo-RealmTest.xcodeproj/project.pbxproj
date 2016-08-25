@@ -11,6 +11,7 @@
 		E736B9321D61D360009FA51E /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736B9311D61D360009FA51E /* RepositoryTableViewCell.swift */; };
 		E772C6181D6DB9790011FE01 /* WeatherCurrentMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772C6171D6DB9790011FE01 /* WeatherCurrentMod.swift */; };
 		E772C61A1D6DE39E0011FE01 /* WeatherCityMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772C6191D6DE39E0011FE01 /* WeatherCityMod.swift */; };
+		E772C61C1D6F41C90011FE01 /* PreviewOfObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772C61B1D6F41C90011FE01 /* PreviewOfObjects.swift */; };
 		E794228F1D4A411700982887 /* WeatherCurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794228E1D4A411700982887 /* WeatherCurrent.swift */; };
 		E79422911D4A46CA00982887 /* WeatherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79422901D4A46CA00982887 /* WeatherCity.swift */; };
 		E79422941D4A4CA000982887 /* Optional+Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79422931D4A4CA000982887 /* Optional+Browser.swift */; };
@@ -31,6 +32,7 @@
 		E736B9311D61D360009FA51E /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		E772C6171D6DB9790011FE01 /* WeatherCurrentMod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCurrentMod.swift; sourceTree = "<group>"; };
 		E772C6191D6DE39E0011FE01 /* WeatherCityMod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCityMod.swift; sourceTree = "<group>"; };
+		E772C61B1D6F41C90011FE01 /* PreviewOfObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewOfObjects.swift; sourceTree = "<group>"; };
 		E794228E1D4A411700982887 /* WeatherCurrent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCurrent.swift; sourceTree = "<group>"; };
 		E79422901D4A46CA00982887 /* WeatherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCity.swift; sourceTree = "<group>"; };
 		E79422931D4A4CA000982887 /* Optional+Browser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Browser.swift"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				E79422961D4A55C200982887 /* GeneralVariables.swift */,
 				E794229B1D4B437E00982887 /* helpersLinks.strings */,
+				E772C61B1D6F41C90011FE01 /* PreviewOfObjects.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			files = (
 				E736B9321D61D360009FA51E /* RepositoryTableViewCell.swift in Sources */,
 				E79422971D4A55C200982887 /* GeneralVariables.swift in Sources */,
+				E772C61C1D6F41C90011FE01 /* PreviewOfObjects.swift in Sources */,
 				E794229A1D4A5B1D00982887 /* OpenweathermapOrgApi.swift in Sources */,
 				E79422911D4A46CA00982887 /* WeatherCity.swift in Sources */,
 				E7C250681D48EC34007632A5 /* AppDelegate.swift in Sources */,

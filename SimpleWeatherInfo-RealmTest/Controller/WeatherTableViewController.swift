@@ -43,14 +43,6 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 
 		//let repositories:WeatherCurrent? = repositoriesResource?.typedContent()
 
-
-//		if repositories != nil {
-//			dictOfRepresentData = repositories!.getRepresentOfObject()
-//		} else {
-//
-//			dictOfRepresentData = [:]
-//		}
-
 		representData = RepresentDataObj(cWeather: repositoriesResource?.typedContent())
 
 	}
@@ -76,7 +68,7 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 	//MARK: Table DataSource/ Delegate
 
 	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return  representData?.countOfElements ?? 0 //dictOfRepresentData.count ?? 0
+		return  representData?.countOfElements ?? 0
 	}
 
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -87,11 +79,12 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 		let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 		if let cell = cell as? RepositoryTableViewCell {
 
-			let dataFromDict = representData![indexPath.row]
+			//let dataFromDict = representData![indexPath.row]
 
-			let cellTransfer = CellDataTemp(title: dataFromDict.key, detail: dataFromDict.value)
+			//let cellTransfer = CellDataTemp(title: dataFromDict.key, detail: dataFromDict.value)
 
-			cell.cellDataTransfer = cellTransfer
+
+			cell.cellDataTransfer = representData![indexPath.row]
 		}
 		return cell
 	}
@@ -99,45 +92,32 @@ class WeatherTableViewController: UITableViewController, ResourceObserver {
 }
 
 struct RepresentDataObj {
-	var dictOfRepresentData: [String: String] = [:] {
-		didSet {
-			arrayOfKeyDict = [String](dictOfRepresentData.keys)
-		}
-	}
-	var countOfElements: Int { get {return dictOfRepresentData.count} }
-	var arrayOfKeyDict:[String] = []
+	var arrayOfRepresentData: [CellDataTemp] = []
+	var countOfElements: Int { get {return arrayOfRepresentData.count} }
 
-	init (cWeather: WeatherCurrent?) {
+	init (cWeather: WeatherCurrentMod?) {
 		guard cWeather != nil else {
-			dictOfRepresentData = [:]
+			arrayOfRepresentData = []
 			return
 		}
 
-		dictOfRepresentData = cWeather!.getRepresentOfObject()
-		arrayOfKeyDict = [String](dictOfRepresentData.keys)
+		arrayOfRepresentData = cWeather!.getRepresentOfObject()
 	}
 
 	func notEmpty() -> Bool {
 		return countOfElements > 0
 	}
 
-	struct ValueFromDict {
-		var key: String = ""
-		var value: String = ""
-	}
+	subscript(indx: Int) -> CellDataTemp {
 
-	subscript(indx: Int) -> ValueFromDict {
-
-		// 1
 		get {
-			var valueToReturn = ValueFromDict()
+			var valueToReturn = CellDataTemp()
 
-			if indx >= 0 && indx <= arrayOfKeyDict.count-1 {
-				let keyByIndex = arrayOfKeyDict[indx]
-				let valueFromD = self.dictOfRepresentData[keyByIndex]!
+			if indx >= 0 && indx <= arrayOfRepresentData.count-1 {
 
-				valueToReturn.key = keyByIndex
-				valueToReturn.value = valueFromD
+				valueToReturn = arrayOfRepresentData [indx]
+			} else {
+				valueToReturn.refresh()
 			}
 
 			return valueToReturn
@@ -145,3 +125,52 @@ struct RepresentDataObj {
 
 	}
 }
+
+
+//struct RepresentDataObj {
+//	var dictOfRepresentData: [String: String] = [:] {
+//		didSet {
+//			arrayOfKeyDict = [String](dictOfRepresentData.keys)
+//		}
+//	}
+//	var countOfElements: Int { get {return dictOfRepresentData.count} }
+//	var arrayOfKeyDict:[String] = []
+//
+//	init (cWeather: WeatherCurrentMod?) {
+//		guard cWeather != nil else {
+//			dictOfRepresentData = [:]
+//			return
+//		}
+//
+//		dictOfRepresentData = cWeather!.getRepresentOfObject()
+//		arrayOfKeyDict = [String](dictOfRepresentData.keys)
+//	}
+//
+//	func notEmpty() -> Bool {
+//		return countOfElements > 0
+//	}
+//
+//	struct ValueFromDict {
+//		var key: String = ""
+//		var value: String = ""
+//	}
+//
+//	subscript(indx: Int) -> ValueFromDict {
+//
+//		// 1
+//		get {
+//			var valueToReturn = ValueFromDict()
+//
+//			if indx >= 0 && indx <= arrayOfKeyDict.count-1 {
+//				let keyByIndex = arrayOfKeyDict[indx]
+//				let valueFromD = self.dictOfRepresentData[keyByIndex]!
+//
+//				valueToReturn.key = keyByIndex
+//				valueToReturn.value = valueFromD
+//			}
+//
+//			return valueToReturn
+//		}
+//
+//	}
+//}

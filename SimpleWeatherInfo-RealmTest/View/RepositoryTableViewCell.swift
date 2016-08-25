@@ -15,8 +15,8 @@ class RepositoryTableViewCell: UITableViewCell {
 
 	var cellDataTransfer: CellDataTemp? {
 		didSet {
-			titleOfCell.text = cellDataTransfer?.titleOfCell
-			detailOfCell.text = cellDataTransfer?.detailOfCell
+			titleOfCell.text = cellDataTransfer?.key
+			detailOfCell.text = cellDataTransfer?.value
 		}
 	}
 
@@ -34,22 +34,22 @@ class RepositoryTableViewCell: UITableViewCell {
 	
 }
 
-struct CellDataTemp {
-	var titleOfCell: String = ""
-	var detailOfCell: String = ""
-
-	init () {
-		refresh()
-	}
-
-	init (title:String, detail:String) {
-		refresh()
-		self.titleOfCell = title
-		self.detailOfCell = detail
-	}
-
-	mutating func refresh() {
-		self.titleOfCell = "<no parameter>"
-		self.detailOfCell = "<no data>"
-	}
-}
+//struct CellDataTemp {
+//	var titleOfCell: String = ""
+//	var detailOfCell: String = ""
+//
+//	init () {
+//		refresh()
+//	}
+//
+//	init (title:String, detail:String) {
+//		refresh()
+//		self.titleOfCell = title
+//		self.detailOfCell = detail
+//	}
+//
+//	mutating func refresh() {
+//		self.titleOfCell = "<no parameter>"
+//		self.detailOfCell = "<no data>"
+//	}
+//}
