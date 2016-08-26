@@ -12,6 +12,8 @@ import ObjectMapper
 
 class WeatherCityMod: Object, Mappable {
 
+//	var realmInstance:RealmUtil? = nil
+
 	dynamic var _id: Int = 0
 	dynamic var name: String? = ""
 	dynamic var country: String? = ""
@@ -43,6 +45,10 @@ class WeatherCityMod: Object, Mappable {
 
 	//MARK: Internal function of class
 
+//	override static func ignoredProperties() -> [String] {
+//		return ["realmInstance"]
+//	}
+
 	func primaryKey() -> String? {
 		return "_id"
 	}
@@ -57,6 +63,10 @@ class WeatherCityMod: Object, Mappable {
 		country					<- map["sys.country"]
 		coordLon.value	<- map["coord.lon"]
 		coordLat.value	<- map["coord.lat"]
+
+//		realmInstance?.saveCurrentObject(self)
 	}
+
+
 
 }

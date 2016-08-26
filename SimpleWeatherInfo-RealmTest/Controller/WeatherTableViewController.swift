@@ -136,7 +136,7 @@ struct RepresentDataObj {
 //	var countOfElements: Int { get {return dictOfRepresentData.count} }
 //	var arrayOfKeyDict:[String] = []
 //
-//	init (cWeather: WeatherCurrentMod?) {
+//	init (cWeather: WeatherCurrent?) {
 //		guard cWeather != nil else {
 //			dictOfRepresentData = [:]
 //			return

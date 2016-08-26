@@ -24,6 +24,8 @@
 		E7C250801D48F8A4007632A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C2507F1D48F8A4007632A5 /* Assets.xcassets */; };
 		E7C2508C1D48F8F0007632A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C250881D48F8F0007632A5 /* LaunchScreen.storyboard */; };
 		E7C2508D1D48F8F0007632A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C2508A1D48F8F0007632A5 /* Main.storyboard */; };
+		E7DE49761D7049B30048EB77 /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE49751D7049B30048EB77 /* RealmUtil.swift */; };
+		E7DE49781D7051760048EB77 /* GenericWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE49771D7051760048EB77 /* GenericWeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		E7C2507F1D48F8A4007632A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7C250891D48F8F0007632A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7C2508B1D48F8F0007632A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E7DE49751D7049B30048EB77 /* RealmUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
+		E7DE49771D7051760048EB77 /* GenericWeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWeatherModel.swift; sourceTree = "<group>"; };
 		F85EF114D9631B861E2988DD /* Pods-SimpleWeatherInfo-RealmTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeatherInfo-RealmTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeatherInfo-RealmTest/Pods-SimpleWeatherInfo-RealmTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +99,7 @@
 				E794228E1D4A411700982887 /* WeatherCurrent.swift */,
 				E772C6191D6DE39E0011FE01 /* WeatherCityMod.swift */,
 				E772C6171D6DB9790011FE01 /* WeatherCurrentMod.swift */,
+				E7DE49771D7051760048EB77 /* GenericWeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				E79422931D4A4CA000982887 /* Optional+Browser.swift */,
+				E7DE49751D7049B30048EB77 /* RealmUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -306,8 +312,10 @@
 				E794229A1D4A5B1D00982887 /* OpenweathermapOrgApi.swift in Sources */,
 				E79422911D4A46CA00982887 /* WeatherCity.swift in Sources */,
 				E7C250681D48EC34007632A5 /* AppDelegate.swift in Sources */,
+				E7DE49781D7051760048EB77 /* GenericWeatherModel.swift in Sources */,
 				E772C6181D6DB9790011FE01 /* WeatherCurrentMod.swift in Sources */,
 				E772C61A1D6DE39E0011FE01 /* WeatherCityMod.swift in Sources */,
+				E7DE49761D7049B30048EB77 /* RealmUtil.swift in Sources */,
 				E794229E1D4B628900982887 /* WeatherTableViewController.swift in Sources */,
 				E794228F1D4A411700982887 /* WeatherCurrent.swift in Sources */,
 				E79422A01D4B62B500982887 /* WeatherMainViewController.swift in Sources */,

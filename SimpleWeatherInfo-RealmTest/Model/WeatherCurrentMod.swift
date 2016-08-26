@@ -12,6 +12,8 @@ import ObjectMapper
 
 class WeatherCurrentMod: Object, Mappable {
 
+//	var realmInstance: RealmUtil? = RealmUtil.sharedInstance
+
 	//MARK: Create Realm Obj. from JSON
 	class func createObject (json: JSON) -> WeatherCurrentMod? {
 		var valueToReturn: WeatherCurrentMod?
@@ -21,9 +23,13 @@ class WeatherCurrentMod: Object, Mappable {
 		if let jsonString = json.rawString() {
 			let context = self.Context(inputJsonString: jsonString)
 			valueToReturn = Mapper<WeatherCurrentMod>(context: context).map(jsonString)
+
+			// Realms are used to group data together
+
 		}
 		return valueToReturn
 	}
+
 
 	//MARK: Internal function of class
 
@@ -51,6 +57,10 @@ class WeatherCurrentMod: Object, Mappable {
 	struct Context: MapContext {
 		var inputJsonString: String?
 	}
+
+//	override static func ignoredProperties() -> [String] {
+//		return ["realmInstance"]
+//	}
 
 	required convenience init?(_ map: Map) {
 		self.init()
@@ -83,8 +93,24 @@ class WeatherCurrentMod: Object, Mappable {
 		sysSunrise					<- (map["sys.sunrise"], DateTransform())
 		sysSunset						<- (map["sys.sunset"], DateTransform())
 
+//		let arrayOfData: [Object] = [self.city!, self]
+//		realmInstance?.saveCurrentObject(arrayOfData)
+
+		saveRealmObject()
 	}
 
+	func saveRealmObject() {
+		let realm = try! Realm()
+
+		realm.beginWrite()
+		if let cityT = city {
+			realm.add(cityT)
+		}
+
+		realm.add(self)
+
+		try! realm.commitWrite()
+	}
 
 	func getRepresentOfObject() -> [CellDataTemp] {
 		var valueForReturn: [CellDataTemp] = []
