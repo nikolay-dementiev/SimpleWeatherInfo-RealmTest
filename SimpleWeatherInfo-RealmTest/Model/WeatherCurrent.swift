@@ -7,6 +7,21 @@
 ////
 //
 //
+
+//import SwiftyJSON
+//import RealmSwift
+//
+//struct WeatherCurrent {
+//	let realmObject: WeatherCurrentMod?
+//
+//	init(json: JSON) throws {
+//		//realmObject = WeatherCurrentMod.createObject(json)
+//		realmObject = nil
+//	}
+//
+//}
+
+
 //import SwiftyJSON
 //
 //struct WeatherCurrent {

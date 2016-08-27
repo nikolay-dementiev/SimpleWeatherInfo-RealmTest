@@ -50,10 +50,10 @@ class OpenweathermapOrg {
 			WeatherCurrentMod.createObject($0.content)
 		}
 
-		service.configure("/*/*/weather") {
-			$0.config.pipeline[.model].add(        // This custom transformer turns that curious convention into
-				TrueIfResourceFoundTransformer())  // a resource whose content is a simple boolean.
-		}
+//		service.configure("/*/*/weather") {
+//			$0.config.pipeline[.model].add(        // This custom transformer turns that curious convention into
+//				TrueIfResourceFoundTransformer())  // a resource whose content is a simple boolean.
+//		}
 
 	}
 

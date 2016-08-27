@@ -96,7 +96,7 @@ struct RepresentDataObj {
 	var countOfElements: Int { get {return arrayOfRepresentData.count} }
 
 	init (cWeather: WeatherCurrentMod?) {
-		guard cWeather != nil else {
+		guard cWeather != nil  else {
 			arrayOfRepresentData = []
 			return
 		}

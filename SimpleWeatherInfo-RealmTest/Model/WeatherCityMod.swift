@@ -19,6 +19,7 @@ class WeatherCityMod: Object, Mappable {
 	dynamic var country: String? = ""
 	let coordLon = RealmOptional<Double>()
 	let coordLat = RealmOptional<Double>()
+	dynamic var dateOfCreation: NSDate?
 
 
 	//MARK: Create Realm Obj. from JSON
@@ -53,12 +54,17 @@ class WeatherCityMod: Object, Mappable {
 		return "_id"
 	}
 
+	override static func indexedProperties() -> [String] {
+		return ["_id,dateOfCreation"]
+	}
+
 	required convenience init?(_ map: Map) {
 		self.init()
 	}
 
 	func mapping(map: Map) {
 		_id							<- map["id"]
+		dateOfCreation	= NSDate()
 		name						<- map["name"]
 		country					<- map["sys.country"]
 		coordLon.value	<- map["coord.lon"]

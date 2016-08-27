@@ -12,7 +12,7 @@ import ObjectMapper
 
 class WeatherCurrentMod: Object, Mappable {
 
-//	var realmInstance: RealmUtil? = RealmUtil.sharedInstance
+	var realmInstance: RealmUtil?
 
 	//MARK: Create Realm Obj. from JSON
 	class func createObject (json: JSON) -> WeatherCurrentMod? {
@@ -34,6 +34,7 @@ class WeatherCurrentMod: Object, Mappable {
 	//MARK: Internal function of class
 
 	dynamic var city: WeatherCityMod?
+	dynamic var dateOfCreation: NSDate?
 	dynamic var weatherMain: String = ""
 	dynamic var weatherDescription: String = ""
 	dynamic var weatherIcon: String?
@@ -61,6 +62,13 @@ class WeatherCurrentMod: Object, Mappable {
 //	override static func ignoredProperties() -> [String] {
 //		return ["realmInstance"]
 //	}
+	override static func indexedProperties() -> [String] {
+		return ["city,dateOfCreation"]
+	}
+
+//	override static func primaryKey() -> String? {
+//		return "city"
+//	}
 
 	required convenience init?(_ map: Map) {
 		self.init()
@@ -69,10 +77,29 @@ class WeatherCurrentMod: Object, Mappable {
 
 	func mapping(map: Map) {
 
+		realmInstance = RealmUtil.sharedInstance
+		var saveCityInBase: Bool = true
 		if let context = map.context as? Context {
-			city = WeatherCityMod.createObject(context.inputJsonString)//map["city"]
+
+			var primaryKeyValueHere: Int? = nil
+			primaryKeyValueHere <- map["id"]
+			if primaryKeyValueHere != nil {
+				let predicate = NSPredicate(format: "_id = %i", primaryKeyValueHere!)
+
+				let cityThatExists = realmInstance!.realm!.objects(WeatherCityMod.self).filter(predicate)
+				//WeatherCityMod.objectsWhere("id == %@", primaryKeyValueHere).firstObject()
+				if cityThatExists.count > 0 {
+					//don't add
+					city = cityThatExists.first
+					saveCityInBase = false
+				} else {
+					//add our object to the DB
+					city = WeatherCityMod.createObject(context.inputJsonString)//map["city"]
+				}
+			}
 		}
 
+		dateOfCreation			= NSDate()
 		weatherMain					<- map["weather.0.main"]
 		weatherIcon					<- map["weather.0.icon"]
 		weatherDescription	<- map["weather.0.description"]
@@ -96,20 +123,41 @@ class WeatherCurrentMod: Object, Mappable {
 //		let arrayOfData: [Object] = [self.city!, self]
 //		realmInstance?.saveCurrentObject(arrayOfData)
 
-		saveRealmObject()
+		saveRealmObject(realmInstance?.realm, saveCity: saveCityInBase)
 	}
 
-	func saveRealmObject() {
-		let realm = try! Realm()
+	func saveRealmObject(realmIn: Realm?, saveCity: Bool) {
+		do {
 
-		realm.beginWrite()
-		if let cityT = city {
-			realm.add(cityT)
+			let realm: Realm
+
+			if realmIn == nil {
+				realm = try Realm()
+			} else {
+				realm = realmIn!
+			}
+
+			realm.beginWrite()
+
+			if saveCity == true {
+				if  let cityT = city {
+					realm.add(cityT)
+				}
+			}
+
+			realm.add(self)
+			try! realm.commitWrite()
+
+//			try! realm.write {
+//				realm.add(self)
+//			}
+
+
+		} catch let error as NSError {
+			// Обработать ошибку
+			print("Error with REALM data : \(error)")
 		}
 
-		realm.add(self)
-
-		try! realm.commitWrite()
 	}
 
 	func getRepresentOfObject() -> [CellDataTemp] {

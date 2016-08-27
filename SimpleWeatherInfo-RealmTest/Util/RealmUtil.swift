@@ -10,18 +10,22 @@ import RealmSwift
 
 //MARK: REALM save file
 
-//class RealmUtil {
-//
-//	//Singleton pattern
-//	static let sharedInstance = RealmUtil()
-//
-//	let realm: Realm?
-//
-//	private init() {
-//		// Create realm pointing to default file
-//		realm = try! Realm()
-//	}
-//
+class RealmUtil {
+
+	//Singleton pattern
+	static let sharedInstance = RealmUtil()
+
+	let realm: Realm?
+
+	private init() {
+		// Create realm pointing to default file
+		realm = try! Realm()
+
+//		try! realm!.write {
+//			realm!.deleteAll()
+//		}
+	}
+
 //	func saveCurrentObject(T: Object) {
 //
 //		if let realmIns = realm {
@@ -43,8 +47,8 @@ import RealmSwift
 //				realmIns.add(itemT)
 //			}
 //			try! realmIns.commitWrite()
-//			
+//
 //		}
 //	}
-//	
-//}
+
+}
