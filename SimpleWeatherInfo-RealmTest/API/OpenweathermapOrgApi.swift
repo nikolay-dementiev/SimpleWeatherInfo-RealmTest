@@ -47,7 +47,8 @@ class OpenweathermapOrg {
 
 		service.configureTransformer("/*/*/weather") {
 			//try WeatherCurrent(json: $0.content)
-			WeatherCurrentMod.createObject($0.content)
+			//WeatherCurrentMod.createObject($0.content)
+			WeatherCurrent(json: $0.content)
 		}
 
 //		service.configure("/*/*/weather") {

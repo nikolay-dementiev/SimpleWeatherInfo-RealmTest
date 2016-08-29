@@ -95,7 +95,7 @@ struct RepresentDataObj {
 	var arrayOfRepresentData: [CellDataTemp] = []
 	var countOfElements: Int { get {return arrayOfRepresentData.count} }
 
-	init (cWeather: WeatherCurrentMod?) {
+	init (cWeather: WeatherCurrent?) {
 		guard cWeather != nil  else {
 			arrayOfRepresentData = []
 			return

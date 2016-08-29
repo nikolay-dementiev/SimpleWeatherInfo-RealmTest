@@ -14,7 +14,8 @@ class WeatherCityMod: Object, Mappable {
 
 //	var realmInstance:RealmUtil? = nil
 
-	dynamic var _id: Int = 0
+	dynamic var uuid: String? = ""
+	dynamic var id: Int = 0
 	dynamic var name: String? = ""
 	dynamic var country: String? = ""
 	let coordLon = RealmOptional<Double>()
@@ -50,12 +51,12 @@ class WeatherCityMod: Object, Mappable {
 //		return ["realmInstance"]
 //	}
 
-	func primaryKey() -> String? {
-		return "_id"
+	override static func primaryKey() -> String? {
+		return "uuid"
 	}
 
 	override static func indexedProperties() -> [String] {
-		return ["_id,dateOfCreation"]
+		return ["uuid,id,dateOfCreation"]
 	}
 
 	required convenience init?(_ map: Map) {
@@ -63,14 +64,17 @@ class WeatherCityMod: Object, Mappable {
 	}
 
 	func mapping(map: Map) {
-		_id							<- map["id"]
+		id							<- map["id"]
 		dateOfCreation	= NSDate()
 		name						<- map["name"]
 		country					<- map["sys.country"]
 		coordLon.value	<- map["coord.lon"]
 		coordLat.value	<- map["coord.lat"]
 
+		uuid						= NSUUID().UUIDString
+
 //		realmInstance?.saveCurrentObject(self)
+//		RealmUtil.saveRealmObject(realmInstance?.realm, object: self)
 	}
 
 
