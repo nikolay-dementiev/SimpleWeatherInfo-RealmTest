@@ -41,7 +41,7 @@ class WeatherCurrentMod: Object, Mappable {
 
 	dynamic var city: WeatherCityMod?
 
-	dynamic var cityUuid: String? = ""
+	//dynamic var cityUuid: String? = ""
 	dynamic var uuid: String? = ""
 
 	dynamic var dateOfCreation: NSDate?

@@ -40,8 +40,6 @@ class WeatherMainViewController: UIViewController, UISearchBarDelegate, Resource
 
 	func resourceChanged(resource: Resource, event: ResourceEvent) {
 		showCurrentWeather(weatherResource?.typedContent())
-
-//		print( weatherResource!.jsonDict["id"])
 	}
 
 

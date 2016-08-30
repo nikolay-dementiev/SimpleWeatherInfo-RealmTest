@@ -49,12 +49,14 @@ struct WeatherCurrent {
 				valueForReturn.append(CellDataTemp(k: "Wind direction, degrees", v: cWeather.windDeg.getStringFormat(2)))
 				valueForReturn.append(CellDataTemp(k: "Rain volume for the last 3 hours", v: (cWeather.rain3h.value ?? 00).getStringFormat(4)))
 				valueForReturn.append(CellDataTemp(k: "Snow volume for the last 3 hours", v: (cWeather.snow3h.value ?? 00).getStringFormat(4)))
-				valueForReturn.append(CellDataTemp(k: "Time of data calculation, UTC", v: cWeather.dt!.getStringFormat()))
+				valueForReturn.append(CellDataTemp(k: "Time of data calculation, UTC", v: cWeather.dt!.parseDate() ))
 				valueForReturn.append(CellDataTemp(k: "Internal parameter (type)", v: cWeather.sysType))
 				valueForReturn.append(CellDataTemp(k: "Internal parameter (id)", v: cWeather.sysId.getStringFormat()))
 				valueForReturn.append(CellDataTemp(k: "Internal parameter (message)", v: cWeather.sysMessage))
-				valueForReturn.append(CellDataTemp(k: "Sunrise time, UTC", v: cWeather.sysSunrise!.getStringFormat()))
-				valueForReturn.append(CellDataTemp(k: "Sunset time, UTC", v: cWeather.sysSunset!.getStringFormat()))
+
+				let parserString = "HH:mm:ss"
+				valueForReturn.append(CellDataTemp(k: "Sunrise time, UTC", v: cWeather.sysSunrise!.parseDate(parserString) ))
+				valueForReturn.append(CellDataTemp(k: "Sunset time, UTC", v: cWeather.sysSunset!.parseDate(parserString) ))
 
 			}
 		}
