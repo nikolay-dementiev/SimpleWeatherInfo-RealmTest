@@ -47,12 +47,8 @@ class WeatherCityMod: Object, Mappable {
 
 	//MARK: Internal function of class
 
-//	override static func ignoredProperties() -> [String] {
-//		return ["realmInstance"]
-//	}
-
 	override static func primaryKey() -> String? {
-		return "uuid"
+		return "id"
 	}
 
 	override static func indexedProperties() -> [String] {
@@ -76,7 +72,5 @@ class WeatherCityMod: Object, Mappable {
 //		realmInstance?.saveCurrentObject(self)
 //		RealmUtil.saveRealmObject(realmInstance?.realm, object: self)
 	}
-
-
 
 }

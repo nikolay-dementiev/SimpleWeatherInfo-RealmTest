@@ -18,10 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
 
-		// if you need to delete all data from REALM (uncomment it):
-		do {
-			try NSFileManager.defaultManager().removeItemAtURL(Realm.Configuration.defaultConfiguration.fileURL!)
-		} catch {}
+//		// if you need to delete all data from REALM (uncomment it):
+//		do {
+//			try NSFileManager.defaultManager().removeItemAtURL(Realm.Configuration.defaultConfiguration.fileURL!)
+//		} catch {}
 
 		return true
 	}

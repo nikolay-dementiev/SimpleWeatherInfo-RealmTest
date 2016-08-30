@@ -51,7 +51,7 @@ class RealmUtil {
 	//		}
 	//	}
 
-	static func saveRealmObject (realmIn: Realm?, object: Object?) {
+	class func saveRealmObject (realmIn: Realm?, object: Object?) {
 
 		guard object != nil else { return }
 
@@ -79,7 +79,7 @@ class RealmUtil {
 
 	}
 
-	static func getRealmObj (realmIn: Realm?) -> Realm? {
+	class func getRealmObj (realmIn: Realm?) -> Realm? {
 
 		var realm: Realm?
 
