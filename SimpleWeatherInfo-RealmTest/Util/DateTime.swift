@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 extension NSDate {
 
@@ -28,4 +29,26 @@ extension NSDate {
 		let dateStr = dateFmt.stringFromDate(self)
 		return dateStr
 	}
+}
+
+extension JSON {
+	public var date: NSDate? {
+		get {
+			if let str: String = self.string {
+				return JSON.jsonDateFormatter.dateFromString(str)
+//			} else {
+//				let dateAsInt = self.int as NSInteger!
+//				let unixTime = dateAsInt / 10000000
+//				return  NSDate(timeIntervalSince1970: NSTimeInterval(unixTime))
+			}
+			return nil
+		}
+	}
+
+	private static let jsonDateFormatter: NSDateFormatter = {
+		let fmt = NSDateFormatter()
+		fmt.dateFormat = NSDate.parserStringDef //"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+		fmt.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+		return fmt
+	}()
 }

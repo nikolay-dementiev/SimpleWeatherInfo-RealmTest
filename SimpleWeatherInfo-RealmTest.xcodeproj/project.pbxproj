@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		479750E2262FEBB7E660D738 /* Pods_SimpleWeatherInfo_RealmTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6965E1E982334B268266442 /* Pods_SimpleWeatherInfo_RealmTest.framework */; };
 		E736B9321D61D360009FA51E /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736B9311D61D360009FA51E /* RepositoryTableViewCell.swift */; };
-		E763F3141D75B28000408A3A /* WeatherCity-SwiftyJsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763F3131D75B28000408A3A /* WeatherCity-SwiftyJsonParsing.swift */; };
-		E763F3161D75B2F400408A3A /* WeatherCurrent-SwiftyJsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763F3151D75B2F400408A3A /* WeatherCurrent-SwiftyJsonParsing.swift */; };
 		E763F3181D75DBBC00408A3A /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763F3171D75DBBC00408A3A /* DateTime.swift */; };
-		E772C6181D6DB9790011FE01 /* WeatherCurrentMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772C6171D6DB9790011FE01 /* WeatherCurrentMod.swift */; };
-		E772C61A1D6DE39E0011FE01 /* WeatherCityMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772C6191D6DE39E0011FE01 /* WeatherCityMod.swift */; };
+		E763F31F1D77189100408A3A /* WeatherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763F31A1D77189100408A3A /* WeatherCity.swift */; };
+		E763F3201D77189100408A3A /* WeatherCityMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763F31B1D77189100408A3A /* WeatherCityMod.swift */; };
+		E763F3211D77189100408A3A /* WeatherCurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763F31C1D77189100408A3A /* WeatherCurrent.swift */; };
+		E763F3221D77189100408A3A /* WeatherCurrentMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763F31D1D77189100408A3A /* WeatherCurrentMod.swift */; };
+		E763F3261D7718CC00408A3A /* WeatherCurrent-SwiftyJsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763F3241D7718CC00408A3A /* WeatherCurrent-SwiftyJsonParsing.swift */; };
+		E763F3281D771B2600408A3A /* WeatherCity-SwiftyJsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763F3271D771B2600408A3A /* WeatherCity-SwiftyJsonParsing.swift */; };
 		E772C61C1D6F41C90011FE01 /* PreviewOfObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772C61B1D6F41C90011FE01 /* PreviewOfObjects.swift */; };
-		E794228F1D4A411700982887 /* WeatherCurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794228E1D4A411700982887 /* WeatherCurrent.swift */; };
-		E79422911D4A46CA00982887 /* WeatherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79422901D4A46CA00982887 /* WeatherCity.swift */; };
 		E79422941D4A4CA000982887 /* Optional+Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79422931D4A4CA000982887 /* Optional+Browser.swift */; };
 		E79422971D4A55C200982887 /* GeneralVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79422961D4A55C200982887 /* GeneralVariables.swift */; };
 		E794229A1D4A5B1D00982887 /* OpenweathermapOrgApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79422991D4A5B1D00982887 /* OpenweathermapOrgApi.swift */; };
@@ -34,14 +34,14 @@
 		C6965E1E982334B268266442 /* Pods_SimpleWeatherInfo_RealmTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleWeatherInfo_RealmTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E0A7A3D21D0C22A9E07A3A /* Pods-SimpleWeatherInfo-RealmTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeatherInfo-RealmTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeatherInfo-RealmTest/Pods-SimpleWeatherInfo-RealmTest.release.xcconfig"; sourceTree = "<group>"; };
 		E736B9311D61D360009FA51E /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
-		E763F3131D75B28000408A3A /* WeatherCity-SwiftyJsonParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherCity-SwiftyJsonParsing.swift"; sourceTree = "<group>"; };
-		E763F3151D75B2F400408A3A /* WeatherCurrent-SwiftyJsonParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherCurrent-SwiftyJsonParsing.swift"; sourceTree = "<group>"; };
 		E763F3171D75DBBC00408A3A /* DateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
-		E772C6171D6DB9790011FE01 /* WeatherCurrentMod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCurrentMod.swift; sourceTree = "<group>"; };
-		E772C6191D6DE39E0011FE01 /* WeatherCityMod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCityMod.swift; sourceTree = "<group>"; };
+		E763F31A1D77189100408A3A /* WeatherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCity.swift; sourceTree = "<group>"; };
+		E763F31B1D77189100408A3A /* WeatherCityMod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCityMod.swift; sourceTree = "<group>"; };
+		E763F31C1D77189100408A3A /* WeatherCurrent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCurrent.swift; sourceTree = "<group>"; };
+		E763F31D1D77189100408A3A /* WeatherCurrentMod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCurrentMod.swift; sourceTree = "<group>"; };
+		E763F3241D7718CC00408A3A /* WeatherCurrent-SwiftyJsonParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherCurrent-SwiftyJsonParsing.swift"; sourceTree = "<group>"; };
+		E763F3271D771B2600408A3A /* WeatherCity-SwiftyJsonParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherCity-SwiftyJsonParsing.swift"; sourceTree = "<group>"; };
 		E772C61B1D6F41C90011FE01 /* PreviewOfObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewOfObjects.swift; sourceTree = "<group>"; };
-		E794228E1D4A411700982887 /* WeatherCurrent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCurrent.swift; sourceTree = "<group>"; };
-		E79422901D4A46CA00982887 /* WeatherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCity.swift; sourceTree = "<group>"; };
 		E79422931D4A4CA000982887 /* Optional+Browser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Browser.swift"; sourceTree = "<group>"; };
 		E79422961D4A55C200982887 /* GeneralVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralVariables.swift; sourceTree = "<group>"; };
 		E79422991D4A5B1D00982887 /* OpenweathermapOrgApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenweathermapOrgApi.swift; sourceTree = "<group>"; };
@@ -90,10 +90,28 @@
 		E763F3121D75B1B500408A3A /* TRASH */ = {
 			isa = PBXGroup;
 			children = (
-				E763F3131D75B28000408A3A /* WeatherCity-SwiftyJsonParsing.swift */,
-				E763F3151D75B2F400408A3A /* WeatherCurrent-SwiftyJsonParsing.swift */,
 			);
 			path = TRASH;
+			sourceTree = "<group>";
+		};
+		E763F3191D77189100408A3A /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				E763F31A1D77189100408A3A /* WeatherCity.swift */,
+				E763F31B1D77189100408A3A /* WeatherCityMod.swift */,
+				E763F31C1D77189100408A3A /* WeatherCurrent.swift */,
+				E763F31D1D77189100408A3A /* WeatherCurrentMod.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		E763F31E1D77189100408A3A /* SwiftyJson */ = {
+			isa = PBXGroup;
+			children = (
+				E763F3271D771B2600408A3A /* WeatherCity-SwiftyJsonParsing.swift */,
+				E763F3241D7718CC00408A3A /* WeatherCurrent-SwiftyJsonParsing.swift */,
+			);
+			path = SwiftyJson;
 			sourceTree = "<group>";
 		};
 		E794228B1D4A3FA200982887 /* Controller */ = {
@@ -108,10 +126,8 @@
 		E794228C1D4A3FA200982887 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E79422901D4A46CA00982887 /* WeatherCity.swift */,
-				E794228E1D4A411700982887 /* WeatherCurrent.swift */,
-				E772C6191D6DE39E0011FE01 /* WeatherCityMod.swift */,
-				E772C6171D6DB9790011FE01 /* WeatherCurrentMod.swift */,
+				E763F3191D77189100408A3A /* Realm */,
+				E763F31E1D77189100408A3A /* SwiftyJson */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -320,22 +336,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E763F3201D77189100408A3A /* WeatherCityMod.swift in Sources */,
 				E736B9321D61D360009FA51E /* RepositoryTableViewCell.swift in Sources */,
+				E763F3211D77189100408A3A /* WeatherCurrent.swift in Sources */,
 				E79422971D4A55C200982887 /* GeneralVariables.swift in Sources */,
 				E763F3181D75DBBC00408A3A /* DateTime.swift in Sources */,
-				E763F3161D75B2F400408A3A /* WeatherCurrent-SwiftyJsonParsing.swift in Sources */,
+				E763F3221D77189100408A3A /* WeatherCurrentMod.swift in Sources */,
 				E772C61C1D6F41C90011FE01 /* PreviewOfObjects.swift in Sources */,
 				E794229A1D4A5B1D00982887 /* OpenweathermapOrgApi.swift in Sources */,
-				E79422911D4A46CA00982887 /* WeatherCity.swift in Sources */,
+				E763F3281D771B2600408A3A /* WeatherCity-SwiftyJsonParsing.swift in Sources */,
 				E7C250681D48EC34007632A5 /* AppDelegate.swift in Sources */,
-				E772C6181D6DB9790011FE01 /* WeatherCurrentMod.swift in Sources */,
-				E772C61A1D6DE39E0011FE01 /* WeatherCityMod.swift in Sources */,
-				E763F3141D75B28000408A3A /* WeatherCity-SwiftyJsonParsing.swift in Sources */,
 				E7DE49761D7049B30048EB77 /* RealmUtil.swift in Sources */,
 				E794229E1D4B628900982887 /* WeatherTableViewController.swift in Sources */,
-				E794228F1D4A411700982887 /* WeatherCurrent.swift in Sources */,
 				E79422A01D4B62B500982887 /* WeatherMainViewController.swift in Sources */,
+				E763F31F1D77189100408A3A /* WeatherCity.swift in Sources */,
 				E79422941D4A4CA000982887 /* Optional+Browser.swift in Sources */,
+				E763F3261D7718CC00408A3A /* WeatherCurrent-SwiftyJsonParsing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
